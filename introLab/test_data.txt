@@ -1,0 +1,4 @@
+Superkampanjen;HYHY78;08-12-2014	1;Parvati;Patil;f;1985;Diagon Alley 2;124587;London	1;Harry;Potter;m;1988;Private Drive 4;1233;Little Winging Surrey	1;Hermione;Granger;f;1988;London street4;123;London
+Idiotkampanjen;GYGY12;02-01-2013	2;Padma;Patil;f;1985;Diagon Alley 2;12453;London	2;Cedric;Diggory;m;1983;Hubert street 3;1245;London
+Hejkampanjen;JIJI23;15-05-2013	3;Simone;Persson;f;1993;Harpsundsvägen 81;12458;Bandhagen	3;Ann-Louise;Oander;f;1966;Enebymovägen 60;10212;Norrköping;	3;Hampus;Persson;m;1990;Cederborgsvägen 13;10214;Norrköping
+Julkampanjen;JUL24;24-12-2018	4;Jultomten;;m;;Tomtevägen 24;242424;Nordpolen	4;Nisse;1;;;Tomtevägen 24;242424;Nordpolen	4;Nisse;;;;Tomtevägen 24;;Nordpolen
