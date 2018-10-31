@@ -159,14 +159,18 @@ public class CampaignHandler {
 	public void deleteCampaignOlderThanDate(String date) throws ParseException {
 		int numberOfDeletedCampaigns = 0;
 		java.sql.Date sqlDate = stringToDate(date);
+		java.sql.Date campaignDate;
 		
 		for (Campaign campaign : campaignDAO.getAllCampaigns()) {
-			if (campaign.getCampaignDate().compareTo(sqlDate) <= 0) {
-				deleteCampaignAndCustomers(campaign);
-				numberOfDeletedCampaigns++;
+			campaignDate = campaign.getCampaignDate();
+			if(campaignDate != null) {
+				if (campaignDate.compareTo(sqlDate) <= 0) {
+					numberOfDeletedCampaigns++;
+					deleteCampaignAndCustomers(campaign);
+				}
 			}
 		}
-		outputHandler.handleMsg(numberOfDeletedCampaigns + " campaigns were deleted successfully!");
+		outputHandler.handleMsg(numberOfDeletedCampaigns + " campaigns were deleted!");
 	}
 	
 	/**

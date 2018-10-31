@@ -1,6 +1,7 @@
 package se.racasse.introlab.startup;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.springframework.stereotype.Service;
 
 import se.racasse.introlab.view.Interpreter;
 

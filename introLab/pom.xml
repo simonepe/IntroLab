@@ -9,6 +9,8 @@
   <properties>
 		<spring.framework>4.3.0.RELEASE</spring.framework>
 		<postgres.version>42.1.4</postgres.version>
+		<maven.compiler.source>1.6</maven.compiler.source>
+    	<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,5 +39,49 @@
             <version>1.2.17</version>
         </dependency>
 	</dependencies>
-	
+	<build>
+	<pluginManagement>
+	<plugins>
+<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.8</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>1.8.9</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                <executable>java</executable>
+          <arguments>
+            <argument>-classpath</argument>
+            <!-- automatically creates the classpath using all project dependencies,
+                 also adding the project build directory -->
+            <classpath/>
+            <argument>se.racasse.introLab.startup.Main</argument>
+            ...
+          </arguments>
+                    <complianceLevel>1.8</complianceLevel>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>spring-aspects</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+	</plugins>
+	</pluginManagement>
+	</build>
 </project>

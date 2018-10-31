@@ -45,7 +45,7 @@ public class FileImporter {
 
 	            while(true){
 	            	
-	            	if(counter == 1000) {
+	            	if(counter == 2) {
 	            		LOGGER.info("Progress info: " + checkProgressPercentage(lineNumber, totalLines) + "% of lines have been read.");
 	            		counter = 0;
 	            	}
@@ -58,11 +58,12 @@ public class FileImporter {
 	                	
 	                	String campaignInfo = campaignWithCustomers[0];
 	                	
-	                		campaignInfoWords = campaignInfo.split(";");
+	                		campaignInfoWords = campaignInfo.split(";", -1);
 	                		
 	    	            	String campaignName = campaignInfoWords[0];
 	    	            	String campaignCode = campaignInfoWords[1];
 	    	            	String campaignDate = campaignInfoWords[2];
+	    	            	
 	    	                campaignHandler.addNewCampaign(campaignName, campaignCode, campaignDate);
 	    	            
 	                    for(int i = 1; i<campaignWithCustomers.length; i++){
@@ -75,7 +76,7 @@ public class FileImporter {
 	                counter++;
 	            }
 	            for(String ci : customerInfo){
-	            	customerInfoWords = ci.split(";");
+	            	customerInfoWords = ci.split(";",-1);
 	            	
 	            	String campaignId = customerInfoWords[0];
 	            	String firstName = customerInfoWords[1];
